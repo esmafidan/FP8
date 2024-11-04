@@ -22,7 +22,7 @@ import sqlite3
 def submit_feedback():
     name = entry_name.get()
     email = entry_email.get()
-    feedback = entry_feedback.get("1.0", tk.END)  # Gets multiline text
+    feedback = entry_feedback.get("1.0", tk.END)  
 
     if name and email and feedback.strip():  # Check if all fields are filled
         conn = sqlite3.connect('customer_feedback.db')
@@ -43,7 +43,7 @@ def submit_feedback():
 # Function to retrieve feedback with password protection
 def retrieve_feedback():
     password = input("Enter the password to retrieve feedback: ")
-    if password == "your_password":  # Replace 'your_password' with the actual password
+    if password == "password123": 
         conn = sqlite3.connect('customer_feedback.db')
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM feedback")
